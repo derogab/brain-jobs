@@ -173,12 +173,21 @@
   
             <!-- OTHER CONTENTS -->            
             <h3>Dettagli</h3>
-            <button id="get-all-requests" class="btn btn-dark btn-block">Visualizza tutte le richieste</button>
-            <div id="results"></div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <button id="get-all-requests" class="btn btn-dark btn-block">Visualizza tutte le richieste</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="get-single-request" class="btn btn-dark btn-block">Visualizza la richiesta</button>
+                    <input type="text" class="form-control" id="job_id" placeholder="Inserisci job_id">
+                    
+                </div>
+
+            </div>
             
-            <input type="text" class="form-control" id="job_id" placeholder="Inserisci job_id">
-            <button id="get-single-request" class="btn btn-dark btn-block">Visualizza la richiesta</button>
-            <div id="result"></div>
+            <div id="results"></div>
 
           </div>
   

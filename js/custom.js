@@ -73,12 +73,12 @@ $(document).ready(function() {
 
                 console.log(result);
 
-                $('#result').html('<div class="alert alert-info" role="alert">'
+                $('#results').html('<div class="alert alert-info" role="alert">'
                     +'<strong>Dati richiesti</strong> <br><br>'+result
                 +'</div>');
             },
             error: function() {
-                $('#result').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
+                $('#results').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
                     +'<strong>Errore!</strong> Si è verificato un errore durante l\'invio della richiesta.'
                     +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                         +'<span aria-hidden="true">&times;</span>'
