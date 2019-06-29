@@ -1,14 +1,15 @@
-const API = "http://localhost:3001/api/v1/users/";
+const API = "http://localhost:8080/brainjobs-backend/api/v1/users/";
 
 $(document).ready(function() {
 
+    // get all requests
     $("#get-all-requests").click(function(e){
         e.preventDefault(); 
 
         $.ajax({
 
             type: "GET",
-            url: 'http://localhost:3001/api/v1/jobs',
+            url: 'http://localhost:8080/brainjobs-backend/api/v1/jobs',
             dataType: "json",
             success: function(data) {
 
@@ -29,8 +30,6 @@ $(document).ready(function() {
 
 				});
 
-                console.log(result);
-
                 $('#results').html('<div class="alert alert-info" role="alert">'
                     +'<strong>Dati richiesti</strong> <br><br>'+result
                 +'</div>');
@@ -48,13 +47,14 @@ $(document).ready(function() {
 
     });
 
+    // get single request
     $("#get-single-request").click(function(e){
         e.preventDefault(); 
 
         $.ajax({
 
             type: "GET",
-            url: 'http://localhost:3001/api/v1/jobs/' + $("#job_id").val(),
+            url: 'http://localhost:8080/brainjobs-backend/api/v1/jobs/' + $("#job_id").val(),
             dataType: "json",
             success: function(data) {
 
@@ -70,8 +70,6 @@ $(document).ready(function() {
                 result += "created_at: " + data.created_at + " <br> ";
                 result += "job_id: " + data.job_id + " <br> ";
                 result += "<br>";
-
-                console.log(result);
 
                 $('#results').html('<div class="alert alert-info" role="alert">'
                     +'<strong>Dati richiesti</strong> <br><br>'+result
