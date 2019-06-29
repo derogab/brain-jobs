@@ -2,6 +2,52 @@ const API = "http://localhost:3001/api/v1/users/";
 
 $(document).ready(function() {
 
+    $("#get-all-requests").click(function(e){
+        e.preventDefault(); 
+
+        $.ajax({
+
+            type: "GET",
+            url: 'http://localhost:3001/api/v1/jobs',
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+
+                var result = "";
+                $(data).each(function(index, item) {
+					result += "<i>Richiesta " + (index+1) + "</i> <br> ";
+					result += "title: " + item.title + " <br> ";
+					result += "language: " + item.language + " <br> ";
+					result += "framework: " + item.framework + " <br> ";
+					result += "dataset: " + item.dataset + " <br> ";
+					result += "dataset_type: " + item.dataset_type + " <br> ";
+					result += "model: " + item.model + " <br> ";
+					result += "status: " + item.status + " <br> ";
+					result += "created_at: " + item.created_at + " <br> ";
+					result += "job_id: " + item.job_id + " <br> ";
+					result += "<br>";
+
+				});
+
+                console.log(result);
+
+                $('#results').html('<div class="alert alert-info" role="alert">'
+                    +'<strong>Dati richiesti</strong> <br><br>'+result
+                +'</div>');
+            },
+            error: function() {
+                $('#results').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
+                    +'<strong>Errore!</strong> Si è verificato un errore durante l\'invio della richiesta.'
+                    +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                        +'<span aria-hidden="true">&times;</span>'
+                    +'</button>'
+                +'</div>');
+            }
+
+        });
+
+    });
+
     // send form
     $("#send-form").click(function(e){
         e.preventDefault();  

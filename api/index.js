@@ -52,7 +52,17 @@ app.post("/api/v1/users/:user_id/jobs", (req, res) => {
         'Location': job_id
                 
     });
-
+    // render risposta
     res.status(201).location(job_id).json(request);
+
+});
+
+app.get("/api/v1/jobs", (req, res) => {
+
+    res.set({
+        'Access-Control-Allow-Origin': '*'                
+    });
+
+    res.json(db.get('requests').value());
 
 });
