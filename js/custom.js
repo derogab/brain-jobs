@@ -11,12 +11,12 @@ $(document).ready(function() {
             url: 'http://localhost:3001/api/v1/jobs',
             dataType: "json",
             success: function(data) {
-                console.log(data);
 
                 var result = "";
                 $(data).each(function(index, item) {
 					result += "<i>Richiesta " + (index+1) + "</i> <br> ";
-					result += "title: " + item.title + " <br> ";
+                    result += "user_id: " + item.user_id + " <br> ";
+                    result += "title: " + item.title + " <br> ";
 					result += "language: " + item.language + " <br> ";
 					result += "framework: " + item.framework + " <br> ";
 					result += "dataset: " + item.dataset + " <br> ";
@@ -37,6 +37,48 @@ $(document).ready(function() {
             },
             error: function() {
                 $('#results').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
+                    +'<strong>Errore!</strong> Si è verificato un errore durante l\'invio della richiesta.'
+                    +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                        +'<span aria-hidden="true">&times;</span>'
+                    +'</button>'
+                +'</div>');
+            }
+
+        });
+
+    });
+
+    $("#get-single-request").click(function(e){
+        e.preventDefault(); 
+
+        $.ajax({
+
+            type: "GET",
+            url: 'http://localhost:3001/api/v1/jobs/' + $("#job_id").val(),
+            dataType: "json",
+            success: function(data) {
+
+                var result = "";
+                result += "user_id: " + data.user_id + " <br> ";
+                result += "title: " + data.title + " <br> ";
+                result += "language: " + data.language + " <br> ";
+                result += "framework: " + data.framework + " <br> ";
+                result += "dataset: " + data.dataset + " <br> ";
+                result += "dataset_type: " + data.dataset_type + " <br> ";
+                result += "model: " + data.model + " <br> ";
+                result += "status: " + data.status + " <br> ";
+                result += "created_at: " + data.created_at + " <br> ";
+                result += "job_id: " + data.job_id + " <br> ";
+                result += "<br>";
+
+                console.log(result);
+
+                $('#result').html('<div class="alert alert-info" role="alert">'
+                    +'<strong>Dati richiesti</strong> <br><br>'+result
+                +'</div>');
+            },
+            error: function() {
+                $('#result').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
                     +'<strong>Errore!</strong> Si è verificato un errore durante l\'invio della richiesta.'
                     +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                         +'<span aria-hidden="true">&times;</span>'
