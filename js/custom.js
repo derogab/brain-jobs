@@ -1,4 +1,4 @@
-const API = "http://localhost:8080/brainjobs-gateway/api/v1/users/";
+const API = "http://localhost:3001/api/v1/users/";
 
 $(document).ready(function() {
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#send-form-result').html('<div class="alert alert-success alert-dismissible fade show" role="alert">'
-                    +'<strong>Richiesta ricevuta!</strong> '+data.msg
+                    +'<strong>Richiesta ricevuta!</strong> '
                     +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                         +'<span aria-hidden="true">&times;</span>'
                     +'</button>'
