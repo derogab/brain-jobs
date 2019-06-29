@@ -1,0 +1,223 @@
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="derogab, dlcgold">
+    <title>BrainJobs</title>
+
+    <!-- Bootstrap core CSS -->
+	  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FA -->
+    <link href="css/fa.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Informazioni</h4>
+              <p class="text-muted">
+                Progetto del corso di Sistemi Distribuiti dell'anno accademico 2018/19 all'università degli studi di Milano-Bicocca.
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Crediti</h4>
+              <ul class="list-unstyled">
+                <li><a class="text-white" href="https://www.github.com/dlcgold">Davide Cozzi</a></li>
+                <li><a class="text-white" href="https://www.github.com/derogab">Gabriele De Rosa</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong><i class="fas fa-brain"></i> BrainJobs</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading"><i class="fas fa-brain"></i> BrainJobs</h1>
+
+        </div>
+      </section>
+
+
+      <!-- CONTENTS HERE-->
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <h3>Richiesta di allenamento</h3>
+
+            <div id="send-form-result"></div>
+
+            <form>
+              <!-- user_id -->
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <label for="user_id">user_id</label>
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                        <input type="text" class="form-control" id="user_id" placeholder="Inserisci user_id">
+                    </div>
+                </div>
+              </div>
+              <!-- title -->
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <label for="title">title</label>
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                      <input type="text" class="form-control" id="title" placeholder="Inserisci title">
+                    </div>
+                </div>
+              </div>
+              <!-- language -->
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <label for="language">language</label>
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                      <select class="custom-select" class="form-control" id="language">
+                        <option selected></option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="scala">Scala</option>
+                        <option value="r">R</option>
+                        <option value="c++">C++</option>
+                        <option value="julia">Julia</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+              <!-- framework -->
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <label for="framework">framework</label>
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                      <select class="custom-select" class="form-control" id="framework">
+                        <option selected></option>
+                        <option value="pytorch">Pytorch</option>
+                        <option value="tensorflow">Tensorflow</option>
+                        <option value="caffe">Caffe</option>
+                        <option value="keras">Keras</option>
+                        <option value="deeplearning4j">Deeplearning4j</option>
+                        <option value="apache_mahout">Apache_mahout</option>
+                        <option value="apache_singa">Apache_singa</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+              <!-- dataset & dataset_datatype-->
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <label for="dataset">dataset</label>
+                    </div>
+                    <div class="col-md-7 col-sm-9">
+                      <input type="text" class="form-control" id="dataset" placeholder="Inserisci dataset">
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                      <select class="custom-select" class="form-control" id="dataset_datatype">
+                        <option selected></option>
+                        <option value="csv">csv</option>
+                        <option value="avro">avro</option>
+                        <option value="json">json</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+              <!-- model -->
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <label for="model">model</label>
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                        <input type="text" class="form-control" id="model" placeholder="Inserisci model">
+                    </div>
+                </div>
+              </div>
+              
+              
+              <button type="submit" class="btn btn-dark btn-block" id="send-form">Invia la richiesta</button>
+            </form>
+          </div>
+  
+          <div class="col-md-6">
+  
+            <!-- OTHER CONTENTS -->            
+            <h3>Dettagli</h3>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <button id="get-all-requests" class="btn btn-dark btn-block">Visualizza tutte le richieste</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="get-single-request" class="btn btn-dark btn-block">Visualizza la richiesta</button>
+                    <input type="text" class="form-control" id="job_id" placeholder="Inserisci job_id">
+                    
+                </div>
+
+            </div>
+            
+            <div id="results"></div>
+
+          </div>
+  
+        </div>
+
+      </div>
+
+      
+      
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Torna su</a>
+        </p>
+        <p><i class="far fa-copyright"></i> BrainJobs 2019</p>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    
+    <!-- Bootstrap bundle JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom javascript script w/ ajax requests-->
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>
