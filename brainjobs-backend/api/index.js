@@ -16,7 +16,7 @@ module.exports = function (app, db) {
             language: req.body.language,
             framework: req.body.framework,
             dataset: req.body.dataset,
-            dataset_type: req.body.dataset_type,
+            dataset_datatype: req.body.dataset_datatype,
             model: req.body.model,  
             status: status,
             created_at: created_at,

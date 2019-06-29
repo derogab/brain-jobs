@@ -1,15 +1,21 @@
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
-var express = require('express'),
-    app = express(),
-    port = 8080;
+var express = require('express');
+
+// backend
+var app_backend = express();
+var port_backend = 8080;
+// frontend
+var app_frontend = express();
+var port_frontend = 8081;
+
 
 var bodyParser = require('body-parser');
+app_backend.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.listen(port);
+app_backend.listen(port_backend);
+app_frontend.listen(port_frontend);
 
 const adapter = new FileSync('db.json');
 const db = low(adapter);
@@ -17,10 +23,12 @@ const db = low(adapter);
 // Set some defaults (required if your JSON file is empty)
 db.defaults({ requests: [] }).write();     
 
-console.log('Web server started on: ' + port);
+console.log('Web Server started.');
+console.log('API started on: ' + port_backend);
+console.log('Static index on: ' + port_frontend);
 
 // API
-require(__dirname + '/api')(app, db);
+require(__dirname + '/api')(app_backend, db);
 
 // FRONT-END
-app.use('/brainjobs-frontend', express.static('../brainjobs-frontend/'));
+app_frontend.use('/brainjobs-frontend', express.static('../brainjobs-frontend/'));

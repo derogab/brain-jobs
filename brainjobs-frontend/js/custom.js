@@ -21,7 +21,7 @@ $(document).ready(function() {
 					result += "language: " + item.language + " <br> ";
 					result += "framework: " + item.framework + " <br> ";
 					result += "dataset: " + item.dataset + " <br> ";
-					result += "dataset_type: " + item.dataset_type + " <br> ";
+					result += "dataset_datatype: " + item.dataset_datatype + " <br> ";
 					result += "model: " + item.model + " <br> ";
 					result += "status: " + item.status + " <br> ";
 					result += "created_at: " + item.created_at + " <br> ";
@@ -64,7 +64,7 @@ $(document).ready(function() {
                 result += "language: " + data.language + " <br> ";
                 result += "framework: " + data.framework + " <br> ";
                 result += "dataset: " + data.dataset + " <br> ";
-                result += "dataset_type: " + data.dataset_type + " <br> ";
+                result += "dataset_datatype: " + data.dataset_datatype + " <br> ";
                 result += "model: " + data.model + " <br> ";
                 result += "status: " + data.status + " <br> ";
                 result += "created_at: " + data.created_at + " <br> ";
@@ -105,7 +105,7 @@ $(document).ready(function() {
                 language: $("#language").val(),
                 framework: $("#framework").val(),
                 dataset: $("#dataset").val(),
-                dataset_type: $("#dataset_type").val(),
+                dataset_datatype: $("#dataset_datatype").val(),
                 model: $("#model").val()
             },
             success: function(data) {
