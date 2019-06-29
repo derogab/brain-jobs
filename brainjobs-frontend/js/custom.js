@@ -1,4 +1,4 @@
-const API = "http://localhost:3001/api/v1/users/";
+const API = "http://localhost:3001/brainjobs-backend/api/v1/users/";
 
 $(document).ready(function() {
 
@@ -8,7 +8,7 @@ $(document).ready(function() {
         $.ajax({
 
             type: "GET",
-            url: 'http://localhost:3001/api/v1/jobs',
+            url: 'http://localhost:3001/brainjobs-backend/api/v1/jobs',
             dataType: "json",
             success: function(data) {
 
