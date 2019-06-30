@@ -8,6 +8,9 @@ module.exports = function (app, db) {
         var job_id = uuidv4();
         var created_at = new Date();
         var status = 'created';
+
+        // gateway convert type
+        req.body = JSON.parse(Object.keys(req.body)[0]);
         
         // request
         var request = {
