@@ -11,7 +11,7 @@ $(document).ready(function() {
         $.ajax({
 
             type: "GET",
-            url: API + 'users/' + user_id + '/jobs',
+            url: API + 'jobs?user_id=' + user_id,
             dataType: "json",
             success: function(data) {
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
         $.ajax({
 
             type: "POST",
-            url: API + 'users/' + user_id + '/jobs',
+            url: API + 'jobs',
             dataType: "json",
             data: {
                 user_id: user_id,
