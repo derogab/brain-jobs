@@ -11,8 +11,6 @@ module.exports = function (app, axios) {
             responseType: 'json'
         })
         .then(function (response) {
-
-            console.log(response);
         
             res.set({
                 'Access-Control-Allow-Origin': '*'                
@@ -44,14 +42,11 @@ module.exports = function (app, axios) {
             data: forward_data
         })
         .then(function (response) {
-
-            //console.log(response);
         
             res.set({
                 'Access-Control-Allow-Origin': '*'                
             });
-            console.log('GATEWAY: ');
-            console.log(req.body);
+            
             res.json(response.data);
 
         })
