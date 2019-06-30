@@ -5,7 +5,7 @@ var express = require('express');
 
 // backend
 var app_backend = express();
-var port_backend = 8080;
+var port_backend = 8082;
 // frontend
 var app_frontend = express();
 var port_frontend = 8081;

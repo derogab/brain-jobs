@@ -3,7 +3,7 @@ module.exports = function (app, axios) {
     // forward all get requests
     app.get("/brainjobs-gateway/api/v1/*", (req, res) => {
 
-        var redirect = 'http://localhost:8080' + req.originalUrl.replace('gateway', 'backend');
+        var redirect = 'http://localhost:8082' + req.originalUrl.replace('gateway', 'backend');
 
         axios({
             method: 'get',
@@ -31,7 +31,7 @@ module.exports = function (app, axios) {
     // forward all post requests
     app.post("/brainjobs-gateway/api/v1/*", (req, res) => {
 
-        var redirect = 'http://localhost:8080' + req.originalUrl.replace('gateway', 'backend');       
+        var redirect = 'http://localhost:8082' + req.originalUrl.replace('gateway', 'backend');       
         var forward_data = req.body;
 
         axios({
