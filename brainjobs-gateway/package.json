@@ -12,6 +12,9 @@
   ],
   "author": "derogab, dlcgold",
   "license": "ISC",
+  "repository": {
+    "private": true
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",

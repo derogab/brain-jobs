@@ -11,7 +11,10 @@
     ],
     "author": "derogab, dlcgold",
     "license": "ISC",
-    "dependencies": {
+    "repository": {
+      "private": true
+    },
+    "dependencies":{
       "body-parser": "^1.19.0",
       "express": "^4.17.1",
       "lowdb": "^1.0.0",
