@@ -13,7 +13,7 @@ RUN cd brainjobs-backend && npm install
 RUN cd brainjobs-gateway && npm install
 
 # Install Process Manager
-RUN npm install -g pm2
+RUN npm install -g --silent pm2
 
 # Open ports
 EXPOSE 8080 8081 8082
