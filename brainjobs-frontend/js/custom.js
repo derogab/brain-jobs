@@ -151,40 +151,60 @@ $(document).ready(function() {
         e.preventDefault();  
 
         var user_id = $("#user_id").val();
+        var title = $("#title").val();
+        var language = $("#language").val();
+        var framework = $("#framework").val();
+        var dataset = $("#dataset").val();
+        var dataset_datatype = $("#dataset_datatype").val();
+        var model = $("#model").val();
 
-        $.ajax({
+        if ( !user_id || !title || !language || !dataset || !dataset_datatype || !model ) { 
 
-            type: "POST",
-            url: API + 'jobs',
-            dataType: "json",
-            data: {
-                user_id: user_id,
-                title: $("#title").val(),
-                language: $("#language").val(),
-                framework: $("#framework").val(),
-                dataset: $("#dataset").val(),
-                dataset_datatype: $("#dataset_datatype").val(),
-                model: $("#model").val()
-            },
-            success: function(data) {
-                $('#send-form-result').html('<div class="alert alert-success alert-dismissible fade show" role="alert">'
-                    +'<strong>Richiesta ricevuta!</strong> '
+            $('#send-form-result').html('<div class="alert alert-warning alert-dismissible fade show" role="alert">'
+                    +'<strong>Warning!</strong> Compilare i campi obbligatori.'
                     +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                         +'<span aria-hidden="true">&times;</span>'
                     +'</button>'
                 +'</div>');
-            },
-            error: function() {
-                $('#send-form-result').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
-                    +'<strong>Errore!</strong> Si è verificato un errore durante l\'invio della richiesta.'
-                    +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
-                        +'<span aria-hidden="true">&times;</span>'
-                    +'</button>'
-                +'</div>');
-            }
 
-        });
+        }
+        else {
+            
+            $.ajax({
 
+                type: "POST",
+                url: API + 'jobs',
+                dataType: "json",
+                data: {
+                    user_id: user_id,
+                    title: title,
+                    language: language,
+                    framework: framework,
+                    dataset: dataset,
+                    dataset_datatype: dataset_datatype,
+                    model: model
+                },
+                success: function(data) {
+                    $('#send-form-result').html('<div class="alert alert-success alert-dismissible fade show" role="alert">'
+                        +'<strong>Richiesta ricevuta!</strong> '
+                        +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                            +'<span aria-hidden="true">&times;</span>'
+                        +'</button>'
+                    +'</div>');
+                },
+                error: function() {
+                    $('#send-form-result').html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'
+                        +'<strong>Errore!</strong> Si è verificato un errore durante l\'invio della richiesta.'
+                        +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                            +'<span aria-hidden="true">&times;</span>'
+                        +'</button>'
+                    +'</div>');
+                }
+    
+            });
+
+        }
+        
     });
 
 
