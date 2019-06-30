@@ -1,6 +1,6 @@
 module.exports = function (app, db) {
 
-    app.post("/brainjobs-backend/api/v1/users/:user_id/jobs", (req, res) => { 
+    app.post("/brainjobs-backend/api/v1/jobs", (req, res) => { 
         
         var uuidv4 = require('uuid/v4');
 
@@ -8,10 +8,13 @@ module.exports = function (app, db) {
         var job_id = uuidv4();
         var created_at = new Date();
         var status = 'created';
+
+        // gateway convert type
+        req.body = JSON.parse(Object.keys(req.body)[0]);
         
         // request
         var request = {
-            user_id: req.params.user_id,
+            user_id: req.body.user_id,
             title: req.body.title,
             language: req.body.language,
             framework: req.body.framework,
@@ -46,7 +49,7 @@ module.exports = function (app, db) {
             'Access-Control-Allow-Origin': '*'                
         });
     
-        res.json(db.get('requests').value());
+        res.json(db.get('requests').filter({ user_id: req.query.user_id }).value());
     
     });
     

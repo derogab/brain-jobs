@@ -1,4 +1,4 @@
-const API = "http://localhost:8080/brainjobs-backend/api/v1/users/";
+const API = "http://localhost:8080/brainjobs-gateway/api/v1/";
 
 $(document).ready(function() {
 
@@ -6,10 +6,12 @@ $(document).ready(function() {
     $("#get-all-requests").click(function(e){
         e.preventDefault(); 
 
+        var user_id = $("#user_id_search").val();
+
         $.ajax({
 
             type: "GET",
-            url: 'http://localhost:8080/brainjobs-backend/api/v1/jobs',
+            url: API + 'jobs?user_id=' + user_id,
             dataType: "json",
             success: function(data) {
 
@@ -54,7 +56,7 @@ $(document).ready(function() {
         $.ajax({
 
             type: "GET",
-            url: 'http://localhost:8080/brainjobs-backend/api/v1/jobs/' + $("#job_id").val(),
+            url: API + 'jobs/' + $("#job_id").val(),
             dataType: "json",
             success: function(data) {
 
@@ -97,7 +99,7 @@ $(document).ready(function() {
         $.ajax({
 
             type: "POST",
-            url: API + user_id + '/jobs',
+            url: API + 'jobs',
             dataType: "json",
             data: {
                 user_id: user_id,
