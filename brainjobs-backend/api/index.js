@@ -43,13 +43,13 @@ module.exports = function (app, db) {
     
     });
     
-    app.get("/brainjobs-backend/api/v1/jobs", (req, res) => {
+    app.get("/brainjobs-backend/api/v1/users/:user_id/jobs", (req, res) => {
     
         res.set({
             'Access-Control-Allow-Origin': '*'                
         });
     
-        res.json(db.get('requests').value());
+        res.json(db.get('requests').filter({ user_id: req.params.user_id }).value());
     
     });
     

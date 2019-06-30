@@ -6,10 +6,12 @@ $(document).ready(function() {
     $("#get-all-requests").click(function(e){
         e.preventDefault(); 
 
+        var user_id = $("#user_id_search").val();
+
         $.ajax({
 
             type: "GET",
-            url: 'http://localhost:8080/brainjobs-gateway/api/v1/jobs',
+            url: API + user_id + '/jobs',
             dataType: "json",
             success: function(data) {
 

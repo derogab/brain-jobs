@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="it">
   <head>
@@ -174,18 +173,32 @@
             <!-- OTHER CONTENTS -->            
             <h3>Dettagli</h3>
 
+            <h6>Richieste di uno user</h6>
             <div class="row">
 
                 <div class="col-md-6">
-                    <button id="get-all-requests" class="btn btn-dark btn-block">Visualizza tutte le richieste</button>
+                  <input type="text" class="form-control" id="user_id_search" placeholder="Inserisci lo user_id">
                 </div>
                 <div class="col-md-6">
-                    <button id="get-single-request" class="btn btn-dark btn-block">Visualizza la richiesta</button>
-                    <input type="text" class="form-control" id="job_id" placeholder="Inserisci job_id">
-                    
+                  <button id="get-all-requests" class="btn btn-dark btn-block">Visualizza le richieste di user</button>
                 </div>
 
             </div>
+
+            <h6 style="margin-top: 5px;">Richiesta singola</h6>
+            <div class="row">
+
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="job_id" placeholder="Inserisci job_id">
+              </div>
+              <div class="col-md-6">
+                  <button id="get-single-request" class="btn btn-dark btn-block">Visualizza la richiesta</button>
+
+              </div>
+
+            </div>
+
+            <hr>
             
             <div id="results"></div>
 
