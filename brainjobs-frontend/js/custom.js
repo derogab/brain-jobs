@@ -55,8 +55,11 @@ $(document).ready(function() {
         
                         });
         
-                        $('#results').html('<div class="alert alert-info" role="alert">'
+                        $('#results').html('<div class="alert alert-info alert-dismissible fade show" role="alert">'
                             +'<strong>Dati richiesti</strong> <br><br>'+result
+                            +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                +'<span aria-hidden="true">&times;</span>'
+                            +'</button>'
                         +'</div>');
 
                     }
@@ -124,8 +127,11 @@ $(document).ready(function() {
                         result += "job_id: " + data.job_id + " <br> ";
                         result += "<br>";
         
-                        $('#results').html('<div class="alert alert-info" role="alert">'
+                        $('#results').html('<div class="alert alert-info alert-dismissible fade show" role="alert">'
                             +'<strong>Dati richiesti</strong> <br><br>'+result
+                            +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                +'<span aria-hidden="true">&times;</span>'
+                            +'</button>'
                         +'</div>');
 
                     }
