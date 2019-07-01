@@ -3,7 +3,7 @@
 ### PROGETTO DEL CORSO DI SISTEMI DISTRIBUITI
 
 1. [OVERVIEW DEL PROGETTO](#overview-del-progetto)
-2. [UTILIZZO](#utilizzo) 
+2. [INSTALLAZIONE E UTILIZZO](#installazione-e-utilizzo) 
 3. [CREDITI](#crediti) 
 
 ## OVERVIEW DEL PROGETTO
@@ -27,9 +27,12 @@ Il backend deve essere in grado di salvare una nuova richiesta, fornire la lista
 
 Una volta che il backend ha salvato una nuova richiesta, altri servizi di BrainJobs si occuperanno di lanciare la computazione, aggiornare lo stato del job ed aggiungere i risultati. Il compito del vostro team è *esclusivamente* quello fornire un frontend ed un backend con le funzionalità sopra indicate.
 
-## UTILIZZO
+## INSTALLAZIONE E UTILIZZO
 
-### Docker
+### Automatico
+##### Requisiti
+- Docker
+##### Procedimento
 ###### Creare l'immagine docker del progetto
 ```bash
 docker build -t brainjobs .
@@ -40,6 +43,10 @@ docker run -d -p 8080:8080 -p 8081:8081 -p 8082:8082 brainjobs
 ```
 
 ### Manuale
+##### Requisiti
+- Node JS
+- NPM
+##### Procedimento
 ###### Avviare il web-server del backend
 ```bash
 cd brainjobs-backend # entra nella sottocartella
