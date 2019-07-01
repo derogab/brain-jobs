@@ -6,7 +6,7 @@ $(document).ready(function() {
     $("#get-all-requests").click(function(e){
         e.preventDefault(); 
 
-        var user_id = $("#user_id_search").val();
+        var user_id = $("#user_id_search").val().trim();
 
         if( !user_id ) {
             $('#results').html('<div class="alert alert-warning alert-dismissible fade show" role="alert">'
@@ -85,7 +85,7 @@ $(document).ready(function() {
     $("#get-single-request").click(function(e){
         e.preventDefault(); 
 
-        var job_id = $("#job_id").val();
+        var job_id = $("#job_id").val().trim();
 
         if( !job_id ) {
             $('#results').html('<div class="alert alert-warning alert-dismissible fade show" role="alert">'
@@ -156,13 +156,13 @@ $(document).ready(function() {
     $("#send-form").click(function(e){
         e.preventDefault();  
 
-        var user_id = $("#user_id").val();
-        var title = $("#title").val();
+        var user_id = $("#user_id").val().trim();
+        var title = $("#title").val().trim();
         var language = $("#language").val();
         var framework = $("#framework").val();
-        var dataset = $("#dataset").val();
+        var dataset = $("#dataset").val().trim();
         var dataset_datatype = $("#dataset_datatype").val();
-        var model = $("#model").val();
+        var model = $("#model").val().trim();
 
         if ( !user_id || !title || !language || !dataset || !dataset_datatype || !model ) { 
 
