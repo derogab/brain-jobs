@@ -2,6 +2,10 @@
 
 ### PROGETTO DEL CORSO DI SISTEMI DISTRIBUITI
 
+1. [OVERVIEW DEL PROGETTO](#overview-del-progetto)
+2. [UTILIZZO](#utilizzo) 
+3. [CREDITI](#crediti) 
+
 ## OVERVIEW DEL PROGETTO
 
 BrainJobs è un (ipotetico) servizio cloud di tipo Software-as-a-Service (SaaS) che offre ai suoi utenti la possibilità di “allenare” modelli di apprendimento automatico, di valutarne le prestazioni ed (eventualmente) riutilizzarli per effettuare simulazioni.
@@ -22,6 +26,34 @@ Il frontend deve permettere ad un utente di creare una nuova richiesta di allena
 Il backend deve essere in grado di salvare una nuova richiesta, fornire la lista delle richieste di un utente e restituire informazioni di dettaglio di ogni richiesta.
 
 Una volta che il backend ha salvato una nuova richiesta, altri servizi di BrainJobs si occuperanno di lanciare la computazione, aggiornare lo stato del job ed aggiungere i risultati. Il compito del vostro team è *esclusivamente* quello fornire un frontend ed un backend con le funzionalità sopra indicate.
+
+## UTILIZZO
+
+### Docker
+###### Creare l'immagine docker del progetto
+```bash
+docker build -t brainjobs .
+```
+###### Avviare l'immagine docker creata
+```bash
+docker run -d -p 8080:8080 -p 8081:8081 -p 8082:8082 brainjobs
+```
+
+### Manuale
+###### Avviare il web-server del backend
+```bash
+cd brainjobs-backend # entra nella sottocartella
+npm install # installazione delle dipendenze
+node index.js & # avvio del web-server in background
+cd .. # esci dalla sottocartella
+```
+###### Avviare il web-server del gateway
+```bash
+cd brainjobs-gateway # entra nella sottocartella
+npm install # installazione delle dipendenze
+node index.js & # avvio del web-server in background
+cd .. # esci dalla sottocartella
+```
 
 ## CREDITI
 
