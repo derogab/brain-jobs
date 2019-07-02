@@ -12,9 +12,7 @@ module.exports = function (app, axios) {
         })
         .then(function (response) {
         
-            res.set({
-                'Access-Control-Allow-Origin': '*'                
-            });
+            res.set(response.headers);
         
             res.json(response.data);
 
@@ -42,10 +40,8 @@ module.exports = function (app, axios) {
             data: forward_data
         })
         .then(function (response) {
-        
-            res.set({
-                'Access-Control-Allow-Origin': '*'                
-            });
+            
+            res.set(response.headers);
             
             res.json(response.data);
 

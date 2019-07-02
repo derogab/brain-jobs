@@ -6,12 +6,16 @@ module.exports = function (app, db) {
 
         // other params
         var job_id = uuidv4();
-        var created_at = new Date();
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+        var created_at = dd + '/' + mm + '/' + yyyy;
         var status = 'created';
 
         // gateway convert type
         req.body = JSON.parse(Object.keys(req.body)[0]);
-        
+
         // request
         var request = {
             user_id: req.body.user_id,

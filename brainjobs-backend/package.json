@@ -1,21 +1,24 @@
 {
-    "name": "brainjobs-backend",
-    "version": "1.0.0",
-    "description": "BrainJobs Backend",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-      "brainjobs", "gateway"
-    ],
-    "author": "derogab, dlcgold",
-    "license": "ISC",
-    "dependencies": {
-      "body-parser": "^1.19.0",
-      "express": "^4.17.1",
-      "lowdb": "^1.0.0",
-      "uuidv4": "^4.0.0"
-    }
+  "name": "brainjobs-backend",
+  "version": "1.0.0",
+  "description": "BrainJobs Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "brainjobs",
+    "gateway"
+  ],
+  "author": "derogab, dlcgold",
+  "license": "ISC",
+  "repository": {
+    "private": true
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "uuidv4": "^4.0.0"
   }
-  
+}
