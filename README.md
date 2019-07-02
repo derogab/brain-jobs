@@ -69,7 +69,7 @@ cd .. # esci dalla sottocartella
 ```
 [GET] localhost:8082/brainjobs-backend/api/v1/jobs?user_id={user_id}
 ```
-###### Aggiunge un job, l'id dell'utente al quale è associato è contenuto nella richiesta]
+###### Aggiunge un job, l'id dell'utente al quale è associato è contenuto nella richiesta
 ```
 [POST] localhost:8082/brainjobs-backend/api/v1/jobs
 ```
