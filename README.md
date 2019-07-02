@@ -3,7 +3,7 @@
 ### PROGETTO DEL CORSO DI SISTEMI DISTRIBUITI
 
 1. [OVERVIEW DEL PROGETTO](#overview-del-progetto)
-2. [UTILIZZO](#utilizzo) 
+2. [INSTALLAZIONE E UTILIZZO](#installazione-e-utilizzo) 
 3. [ENDPOINT API](#endpoint-api)
 4. [LINK DEL PANNELLO](#link-del-pannello)
 5. [CREDITI](#crediti) 
