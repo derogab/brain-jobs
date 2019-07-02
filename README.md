@@ -67,15 +67,15 @@ cd .. # esci dalla sottocartella
 ## ENDPOINT API
 ###### Visualizza tutti i jobs di un utente
 ```
-[GET] localhost:8080/brainjobs-gateway/api/v1/jobs?user_id={user_id}
+[GET] localhost:8082/brainjobs-backend/api/v1/jobs?user_id={user_id}
 ```
-###### ​Aggiunge un job, l'id dell'utente al quale è associato è contenuto nella richiesta]
+###### Aggiunge un job, l'id dell'utente al quale è associato è contenuto nella richiesta]
 ```
-[POST] localhost:8080/brainjobs-gateway/api/v1/jobs
+[POST] localhost:8082/brainjobs-backend/api/v1/jobs
 ```
 ###### Visualizza i dettagli di un job
 ```
-[GET] localhost:8080/brainjobs-gateway/api/v1/jobs/{job-id}
+[GET] localhost:8082/brainjobs-backend/api/v1/jobs/{job-id}
 ```
 
 ## LINK DEL PANNELLO
