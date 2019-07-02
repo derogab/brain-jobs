@@ -5,7 +5,8 @@
 1. [OVERVIEW DEL PROGETTO](#overview-del-progetto)
 2. [UTILIZZO](#utilizzo) 
 3. [ENDPOINT API](#endpoint-api)
-4. [CREDITI](#crediti) 
+4. [LINK DEL PANNELLO](#link-del-pannello)
+5. [CREDITI](#crediti) 
 
 ## OVERVIEW DEL PROGETTO
 
@@ -68,6 +69,11 @@ cd .. # esci dalla sottocartella
 ###### Visualizza i dettagli di un job
 ```
 [GET] localhost:8080/brainjobs-gateway/api/v1/jobs/{job-id}
+```
+
+## LINK DEL PANNELLO
+```
+http://localhost:8081/brainjobs-frontend/
 ```
 
 ## CREDITI
