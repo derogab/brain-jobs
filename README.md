@@ -4,19 +4,20 @@
 
 1. [OVERVIEW DEL PROGETTO](#overview-del-progetto)
 2. [UTILIZZO](#utilizzo) 
-3. [CREDITI](#crediti) 
+3. [ENDPOINT API](#endpoint-api)
+4. [CREDITI](#crediti) 
 
 ## OVERVIEW DEL PROGETTO
 
 BrainJobs è un (ipotetico) servizio cloud di tipo Software-as-a-Service (SaaS) che offre ai suoi utenti la possibilità di “allenare” modelli di apprendimento automatico, di valutarne le prestazioni ed (eventualmente) riutilizzarli per effettuare simulazioni.
 
-Il sistema permette agli utenti di effettuare richieste di allenamento o simulazione caricando i dati insieme al modello o utilizzandone uno già precedentemente allenato e salvato nel proprio archivio. In base al linguaggio o al framework utilizzato per il codice del modello, BrainJobs lancia la computazione in un particolare ambiente di esecuzione che verrà istanziato “on-the-fly” in un’altra piattaforma cloud di tipo Serverless basata su containers (es: Apache OpenWhisk, Knative, ...).
+Il sistema permette agli utenti di effettuare richieste di allenamento o simulazione caricando i dati insieme al modello o utilizzandone uno già precedentemente allenato e salvato nel proprio archivio. In base al linguaggio o al framework utilizzato per il codice del modello, BrainJobs lancia la computazione in un particolare ambiente di esecuzione che verrà istanziato “on-the-fly” in un'altra piattaforma cloud di tipo Serverless basata su containers (es: Apache OpenWhisk, Knative, ...).
 
 Gli utenti possono sottomettere più richieste consecutive. Esse verranno gestite in parallelo in un sistema a coda. Ogni richiesta di un utente corrisponde ad un task di lavoro (job).
 
 Gli utenti possono controllare lo stato delle loro richieste dalla dashboard di BrainJobs, ed una volta terminate, visualizzarne i risultati. Successivamente, il sistema permette di scartare o salvare il modello per utilizzi futuri.
 
-L’architettura del servizio BrainJobs è suddivisa in tanti servizi e componenti, ognuno con un compito ben specifico. Al vostro team, è richiesta la creazione di due componenti:
+L'architettura del servizio BrainJobs è suddivisa in tanti servizi e componenti, ognuno con un compito ben specifico. Al vostro team, è richiesta la creazione di due componenti:
 
 1. un componente di frontend implementato utilizzando HTML, CSS e JavaScript che utilizza il paradigma AJAX per inviare/ricevere dati
 2. un componente di backend che espone una HTTP API REST
@@ -53,6 +54,20 @@ cd brainjobs-gateway # entra nella sottocartella
 npm install # installazione delle dipendenze
 node index.js & # avvio del web-server in background
 cd .. # esci dalla sottocartella
+```
+
+## ENDPOINT API
+###### Visualizza tutti i jobs di un utente
+```
+[GET] localhost:8080/brainjobs-gateway/api/v1/jobs?user_id={user_id}
+```
+###### ​Aggiunge un job, l'id dell'utente al quale è associato è contenuto nella richiesta]
+```
+[POST] localhost:8080/brainjobs-gateway/api/v1/jobs
+```
+###### Visualizza i dettagli di un job
+```
+[GET] localhost:8080/brainjobs-gateway/api/v1/jobs/{job-id}
 ```
 
 ## CREDITI
