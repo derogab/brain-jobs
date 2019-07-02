@@ -29,9 +29,12 @@ Il backend deve essere in grado di salvare una nuova richiesta, fornire la lista
 
 Una volta che il backend ha salvato una nuova richiesta, altri servizi di BrainJobs si occuperanno di lanciare la computazione, aggiornare lo stato del job ed aggiungere i risultati. Il compito del vostro team è *esclusivamente* quello fornire un frontend ed un backend con le funzionalità sopra indicate.
 
-## UTILIZZO
+## INSTALLAZIONE E UTILIZZO
 
-### Docker
+### Automatico
+##### Requisiti
+- Docker
+##### Procedimento
 ###### Creare l'immagine docker del progetto
 ```bash
 docker build -t brainjobs .
@@ -42,6 +45,10 @@ docker run -d -p 8080:8080 -p 8081:8081 -p 8082:8082 brainjobs
 ```
 
 ### Manuale
+##### Requisiti
+- Node JS
+- NPM
+##### Procedimento
 ###### Avviare il web-server del backend
 ```bash
 cd brainjobs-backend # entra nella sottocartella
